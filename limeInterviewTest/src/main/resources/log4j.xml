@@ -13,44 +13,63 @@
 	
 	
 	<!-- Application Loggers -->
-	<logger name="com.lime.interview">
+	<logger name="com.lime" additivity="false">
 		<level value="info" />
+		<appender-ref ref="console"/>
 	</logger>
+	
 	
 	<!-- 3rdparty Loggers -->
-	<logger name="org.springframework.core">
+	<!-- <logger name="org.springframework" additivity="false">
 		<level value="info" />
+		<appender-ref ref="console"/>
+	</logger> -->
+	
+	<!-- <logger name="org.springframework.beans" additivity="false">
+		<level value="info" />
+		<appender-ref ref="console"/>
 	</logger>
 	
-	<logger name="org.springframework.beans">
+	<logger name="org.springframework.context" additivity="false">
 		<level value="info" />
-	</logger>
-	
-	<logger name="org.springframework.context">
-		<level value="info" />
+		<appender-ref ref="console"/>
 	</logger>
 
-	<logger name="org.springframework.web">
+	<logger name="org.springframework.web" additivity="false">
 		<level value="info" />
-	</logger>
+		<appender-ref ref="console"/>
+	</logger> -->
 	
 	
 	<logger name="java.sqlonly" additivity="false">
-		<level value="debug"></level>
+		<level value="info"></level>
 		<appender-ref ref="console"/>
 	</logger>
+	
 	<logger name="jdbc.sqltiming" additivity="false">
-		<level value="debug"></level>
+		<level value="info"></level>
 		<appender-ref ref="console"/>
 	</logger>
+	
 	<logger name="jdbc.resultsettable" additivity="false">
 		<level value="info"></level>
 		<appender-ref ref="console"/>
 	</logger>
-
+	<logger name="jdbc.resultset" additivity="false">
+		<level value="off"></level>
+		<appender-ref ref="console"/>
+	</logger>
+	<logger name="jdbc.audit" additivity="false">
+		<level value="off"></level>
+		<appender-ref ref="console"/>
+	</logger>
+	<logger name="jdbc.connection">
+		<level value="off"></level>
+		<appender-ref ref="console"/>
+	</logger>
 	<!-- Root Logger -->
 	<root>
-		<priority value="warn" />
+		<priority value="info" />
 		<appender-ref ref="console" />
 	</root>
 

@@ -1,31 +1,22 @@
-/**
- * 
- */
 
-
-function getScreenshotOfElement(_element, _posX, _posY, _width, _height, _callback) {
-	html2canvas(_element).then(
-				function (canvas) {
-					var context = canvas.getContext("2d");
-					var imageData = context.getImageData(_posX, _posY, _width, _height).data;
-					var outputCanvas = document.createElement("canvas");
-					var outputContext = outputCanvas.getContext("2d");
-					
-					outputCanvas.width = _width;
-					outputCanvas.height = _height;
-					
-					var idata = outputContext.createImageData(_width, _height);
-					idata.data.set(imageData);
-					outputContext.putImageData(idata, 0,0);
-					_callback(outputCanvas.toDataURL().replace("data:image/png;base64,", ""));
-					
-				}
-			) 
-	
-	
+function getScreenshotOfElement(_element, _callback) {
+	html2canvas(_element).then( (canvas) => _callback(canvas.toDataURL('img/png') )); 
 }
 
-function getScreenShot(_element, _callback) {
+function afterScreenShot(data) {
+	let userName = prompt("이름??");
+	if(userName == undefined || userName == "") {
+		alert("이름을 입력해 주세요.");
+		return;
+	}
 	
-	html2canvas(_element).then(_callback(data))
+	var link = document.createElement('a');
+	
+	link.href=data;
+	link.download = "LIME_TEST_"+userName+".png";
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+	
+ 
 }

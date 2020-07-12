@@ -2,10 +2,11 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/interviewTest.do">
-					<img style="position: absolute; width: 40px; margin: 5px 5px;" src='/images/common/lime.jpg'>
-				</a>
+				
 				<div class="headertext">
+					<a class="logo" href="/interviewTest.do">
+						<img class="logo" src='/images/common/lime.jpg'>
+					</a>
 					<span> LIME INTERVIEW TEST</span>
 				</div>
 			</div>

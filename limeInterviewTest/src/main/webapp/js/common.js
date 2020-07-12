@@ -15,12 +15,14 @@ function doAjax(_url, _data, _success, _fail, _contentType, _dataType, _type, _a
 	_fail = (typeof _fail == "undefined") ? null : _fail;
 	_contentType = (typeof _contentType == "undefined") ? "application/json" : _contentType;
 	_dataType = (typeof _dataType == "undefined") ? "json" : _dataType;
+	_async = (typeof _async == "undefined") ? true : _async;
 	
 	$.ajax({
 		url : _url,
 		data : _data,
 		contentType : _contentType,
 		dataType : _dataType,
+		async : _async,
 		success : _success,
 		error : _fail
 	});
