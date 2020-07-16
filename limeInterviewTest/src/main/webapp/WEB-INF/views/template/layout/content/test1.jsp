@@ -91,7 +91,7 @@
 			<span>
 				<div class="question_tag">
 					<pre>SELECT E.ENAME, D.DEPTNO, D.DNAME</pre>
-					<pre>  FROM DEPT D,<input class="input_answer" type="text" id="input_que4_1" name="input_que4_1" value=""></pre>
+					<pre>  FROM DEPT D <input class="input_answer" type="text" id="input_que4_1" name="input_que4_1" value=""></pre>
 					<pre>       EMP E</pre>
 					<pre>    ON D.DEPTNO = E.DEPTNO;</pre>
 				</div>
